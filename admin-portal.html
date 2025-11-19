@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MentorHub | Admin Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container futuristic-container">
+        <header>
+            <h1>Admin Dashboard</h1>
+            <button class="logout-btn" onclick="logoutAdmin()">Logout</button>
+        </header>
+
+        <section id="adminSummary" class="dashboard-summary"></section>
+
+        <section class="admin-requests-section">
+            <h2>Incoming Applications</h2>
+            <div id="adminRequests"></div>
+        </section>
+
+        <section class="admin-profile-section">
+            <h2>My Profile</h2>
+            <input type="text" id="adminUsername" placeholder="Username" />
+            <input type="email" id="adminEmail" placeholder="Email" />
+            <button onclick="updateAdminProfile()">Update Profile</button>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
