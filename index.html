@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MentorHub — University Application Portal</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>MentorHub | Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="choose-page">
-  <div class="container">
-    <h1>University Application Portal</h1>
-    <div class="university-buttons">
-      <!-- Applicant Portal Button -->
-      <button onclick="window.location.href='applicant_form.html'">
-        <!-- Banner Image instead of Logo -->
-        <img src="assets/banners/banner1.jpg" alt="Applicant Portal Banner">
-        Applicant Portal
-      </button>
+<body>
+    <div class="container futuristic-container">
+        <h1 class="futuristic-title">MentorHub 🤖</h1>
+        <p>Welcome to the AI-powered University Application Portal</p>
 
-      <!-- Admin Portal Button -->
-      <button onclick="window.location.href='admin_dashboard.html'">
-        <img src="assets/banners/banner2.jpg" alt="Admin Portal Banner">
-        Admin Portal
-      </button>
+        <div class="login-options">
+            <button onclick="showApplicantLogin()">Applicant Login</button>
+            <button onclick="showAdminLogin()">Admin Login</button>
+        </div>
+
+        <div id="applicantLogin" class="login-form hidden">
+            <h3>Applicant Login</h3>
+            <input type="text" id="applicantName" placeholder="Full Name" />
+            <input type="email" id="applicantEmail" placeholder="Email" />
+            <button onclick="loginApplicant(applicantName.value, applicantEmail.value)">Login as Applicant</button>
+        </div>
+
+        <div id="adminLogin" class="login-form hidden">
+            <h3>Admin Login</h3>
+            <input type="text" id="adminUsernameInput" placeholder="Username" />
+            <input type="password" id="adminPasswordInput" placeholder="Password" />
+            <button onclick="loginAdmin(adminUsernameInput.value, adminPasswordInput.value)">Login as Admin</button>
+        </div>
     </div>
-  </div>
 
-  <!-- Link to main JS -->
-  <script src="app.js" defer></script>
+    <script src="app.js"></script>
+    <script>
+        function showApplicantLogin() {
+            document.getElementById('applicantLogin').classList.remove('hidden');
+            document.getElementById('adminLogin').classList.add('hidden');
+        }
+        function showAdminLogin() {
+            document.getElementById('adminLogin').classList.remove('hidden');
+            document.getElementById('applicantLogin').classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
+
