@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="portal-page admin-page">
+  <!-- Header -->
+  <header class="portal-header">
+    <div class="portal-title">Admin Portal</div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="portal-container">
+    <!-- Banner (graphics remain the same) -->
+    <div class="portal-banner" style="background-image:url('assets/banners/uj-banner.jpg');"></div>
+
+    <!-- Welcome Section -->
+    <section class="portal-welcome">
+      <h1>Welcome, Admin 👋</h1>
+      <p>View and process all incoming university applications.</p>
+
+      <!-- Admin Links -->
+      <div class="portal-links">
+        <button onclick="window.location.href='admin_requests.html'">View Requests</button>
+        <button onclick="window.location.href='admin_dashboard.html'">Dashboard</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>© 2025 Admin Portal | Powered by MentorHub</footer>
+
+  <!-- Unified JS for both admin + applicants -->
+  <script src="app.js" defer></script>
+</body>
+</html>
