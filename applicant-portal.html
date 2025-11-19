@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MentorHub | Applicant Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container futuristic-container">
+        <header>
+            <h1 id="welcomeName">Welcome, Applicant 👩‍🎓</h1>
+            <button class="logout-btn" onclick="logoutApplicant()">Logout</button>
+        </header>
+
+        <section id="applicantSummary" class="dashboard-summary"></section>
+
+        <section class="application-form-section">
+            <h2>Submit New Application</h2>
+            <form id="applicationForm" onsubmit="submitApplicationForm(event)">
+                <input type="text" id="fullName" placeholder="Full Name" required />
+                <input type="email" id="email" placeholder="Email" required />
+                <input type="text" id="contact" placeholder="Contact Number" required />
+                <select id="university" required>
+                    <option value="">Select University</option>
+                    <option value="MIT">MIT</option>
+                    <option value="Stanford">Stanford</option>
+                    <option value="Harvard">Harvard</option>
+                </select>
+
+                <div class="courses-selection">
+                    <label><input type="checkbox" name="courses" value="Computer Science"> Computer Science</label>
+                    <label><input type="checkbox" name="courses" value="Data Science"> Data Science</label>
+                    <label><input type="checkbox" name="courses" value="Engineering"> Engineering</label>
+                    <label><input type="checkbox" name="courses" value="Mathematics"> Mathematics</label>
+                    <label><input type="checkbox" name="courses" value="Business"> Business</label>
+                </div>
+
+                <input type="file" id="documents" multiple onchange="previewFiles('documents', 'filePreview')" />
+                <div id="filePreview" class="file-preview"></div>
+
+                <button type="submit">Submit Application</button>
+            </form>
+        </section>
+
+        <section class="application-status-section">
+            <h2>My Applications</h2>
+            <div id="applicationRequests"></div>
+        </section>
+
+        <section class="profile-section">
+            <h2>My Profile</h2>
+            <input type="text" id="profileName" placeholder="Full Name" />
+            <input type="email" id="profileEmail" placeholder="Email" />
+            <button onclick="updateProfile()">Update Profile</button>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
